@@ -2,6 +2,7 @@
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
     "@rails/actiontext": "^8.0.0",
+    "daisyui": "^5.5.18",
     "leaflet": "^1.9.4",
     "maplibre-gl": "^5.13.0",
     "postcss": "^8.4.49",
@@ -14,7 +15,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
     "@playwright/test": "^1.56.1",
-    "@types/node": "^24.0.13",
-    "daisyui": "^5.5.18"
+    "@types/node": "^24.0.13"
   }
 }
