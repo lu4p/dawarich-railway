@@ -53,6 +53,10 @@ RUN gem update --system 3.6.9 \
 
 WORKDIR $APP_PATH
 
+# Install Node.js dependencie
+COPY package.json package-lock.json ./
+RUN npm ci
+
 COPY ../Gemfile ../Gemfile.lock ../.ruby-version ../vendor ./
 
 # Install production gems only
