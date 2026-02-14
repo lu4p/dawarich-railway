@@ -81,9 +81,9 @@ RUN cp -r public /tmp/public_assets
 COPY ./docker/web-entrypoint.sh /usr/local/bin/web-entrypoint.sh
 RUN chmod +x /usr/local/bin/web-entrypoint.sh
 
-COPY ./docker/sidekiq-entrypoint.sh /usr/local/bin/sidekiq-entrypoint.sh
-RUN chmod +x /usr/local/bin/sidekiq-entrypoint.sh
+COPY ./docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE $RAILS_PORT
 
-ENTRYPOINT [ "bundle", "exec" ]
+ENTRYPOINT ["entrypoint.sh"]

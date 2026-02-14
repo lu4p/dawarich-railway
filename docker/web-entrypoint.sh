@@ -111,5 +111,3 @@ if [ "$PROMETHEUS_EXPORTER_ENABLED" = "true" ]; then
   esac
 fi
 
-# run passed commands
-bundle exec "$@"
