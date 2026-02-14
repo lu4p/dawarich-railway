@@ -5,16 +5,18 @@ if User.none?
 
   email = 'demo@dawarich.app'
 
+  password = ENV['DEFAULT_USER_PASSWORD'].presence || 'password'
+
   User.create!(
     email:,
-    password: 'password',
-    password_confirmation: 'password',
+    password:,
+    password_confirmation: password,
     admin: true,
     status: :active,
     active_until: 100.years.from_now
   )
 
-  puts "User created: '#{email}' / password: 'password'"
+  puts "User created: '#{email}'"
 end
 
 if Country.none?
