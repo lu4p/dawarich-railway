@@ -87,5 +87,3 @@ COPY ./docker/sidekiq-entrypoint.sh /usr/local/bin/sidekiq-entrypoint.sh
 RUN chmod +x /usr/local/bin/sidekiq-entrypoint.sh
 
 EXPOSE $RAILS_PORT
-
-ENTRYPOINT [ "bundle", "exec" ]
