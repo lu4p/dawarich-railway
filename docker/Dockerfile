@@ -62,9 +62,7 @@ COPY ../Gemfile ../Gemfile.lock ../.ruby-version ../vendor ./
 # Install production gems only
 RUN bundle config set --local path 'vendor/bundle' \
     && bundle config set --local without 'development test' \
-    && bundle install --jobs 4 --retry 3 \
-    && rm -rf vendor/bundle/ruby/3.4.0/cache/*.gem
-
+    && bundle install --jobs 4 --retry 3 
 COPY ../. ./
 
 # Precompile assets
@@ -87,3 +85,5 @@ COPY ./docker/sidekiq-entrypoint.sh /usr/local/bin/sidekiq-entrypoint.sh
 RUN chmod +x /usr/local/bin/sidekiq-entrypoint.sh
 
 EXPOSE $RAILS_PORT
+
+ENTRYPOINT [ "bundle", "exec" ]
