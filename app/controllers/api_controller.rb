@@ -33,7 +33,9 @@ class ApiController < ApplicationController
   end
 
   def current_api_user
-    @current_api_user ||= User.find_by(api_key:)
+    return @current_api_user if defined?(@current_api_user)
+
+    @current_api_user = api_key.present? ? User.find_by(api_key:) : nil
   end
 
   def api_key
